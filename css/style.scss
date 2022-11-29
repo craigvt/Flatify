@@ -1,0 +1,659 @@
+
+/* =====================
+    Typography
+=======================*/
+
+/* Roboto */
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Light.ttf) format('truetype');
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Regular.ttf) format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Bold.ttf) format('truetype');
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Black.ttf) format('truetype');
+    font-weight: 900;
+    font-display: swap;
+}
+
+$header-font: 'Roboto', Helvetica, Verdana, sans-serif;
+$body-font: 'Roboto', Helvetica, Verdana, sans-serif;
+
+$light: 300;
+$regular: 400;
+$bold: 700;
+$black: 900;
+
+$grey: #888888;
+
+p, h1, h2, h3, h4, h5 h6 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: $body-font;
+    font-weight: $regular;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: .5px;
+}
+
+h1 {
+    font-family: $header-font;
+    font-size: 60px;
+    line-height: 68px;
+    letter-spacing: .5px;
+
+    @media (max-width: 1200px) {
+        font-size: 48px;
+        line-height: 56px;
+    }
+}
+
+h2 {
+    font-family: $header-font;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: .5px;
+
+    @media (max-width: 1200px) {
+        font-size: 21px;
+        line-height: 25px;
+    }
+}
+
+h3 {
+    font-family: $header-font;
+    font-size: 19px;
+    line-height: 27px;
+    letter-spacing: .5px;
+
+    @media (max-width: 1200px) {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+h4 {
+    font-family: $header-font;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+h5 {
+    font-family: $header-font;
+    font-size: 17px;
+    line-height: 25px;
+}
+
+h5 {
+    font-family: $header-font;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+/* =====================
+    Layout
+=======================*/
+
+$content-width: 1140px;
+
+body {
+    background: #fff;
+    font-family: $body-font;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: $content-width;
+    margin: 0 auto;
+
+    @media (max-width: 1200px) {
+        padding: 0px 40px;
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* =====================
+    Hero Section
+=======================*/
+
+.hero {
+    width: 100%;
+    height: 725px;
+    margin: 0;
+    padding: 0;
+    background: url("/img/hero-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+    @media (max-width: 1200px) {
+        height: 640px;
+    }
+
+    @media (max-width: 850px) {
+        height: auto;
+        background: none;
+    }
+
+    .grid {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 50%;
+
+        @media (max-width: 850px) {
+            display: block;
+        }
+
+        .content-wrap {
+            height: 100%;
+            display: grid;
+            justify-items: center;
+            background: #AD451F;
+
+            @media (max-width: 850px) {
+                padding: 20px 40px;
+            }
+
+            .content {
+                width: 60%;
+
+                @media (max-width: 1200px) {
+                    width: 65%;
+                }
+
+                @media (max-width: 850px) {
+                    display: grid;
+                    width: 100%;
+                    padding: 40px 0px;
+                    text-align: center;
+                }
+
+                .logo {
+                    margin-top: 60px;
+
+                    @media (max-width: 850px) {
+                        justify-self: center;
+                        margin-top: 0px;
+                    }
+                }
+
+                h1 {
+                    margin-top: 30px;
+                    margin-bottom: 0px;
+                    padding: 0;
+                    color: #FFF;
+                }
+    
+                h3 {
+                    margin: 30px 0px;
+                    font-weight: $regular;
+                    color: #FFEFA0;
+                }
+    
+                .form { 
+                    display: flex;
+                    margin-top: 30px;
+
+                    @media (max-width: 850px) {
+                        justify-self: center;
+                        margin-top: 0px;
+                    }
+
+                    input[type=email] {
+                        width: 240px;
+                        height: 48px;
+                        margin: 0;
+                        border: 0;
+                        padding-left: 20px;
+                        border-radius: 5px 0px 0px 5px;
+                        outline: none;
+                        background-color: #fff;
+                        font-family: $body-font;
+                        font-size: 16px;
+                        color: #121213;
+                    }
+
+                    input[type=button] {
+                        position: relative;
+                        width: 100px;
+                        height: 50px;
+                        margin: 0;
+                        border: 0;
+                        border-radius: 0px 5px 5px 0px;
+                        background: url("../img/go.svg");
+                        background-size: 40px;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-color: #439B9F;
+                        cursor: pointer;
+                        transition: 0.3s;
+                    }
+
+                    input[type=button]:hover {
+                        background-color: #35797c;
+                    }
+                }
+            }
+        }
+    }
+
+    .shape-cover {
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+
+        @media (max-width: 850px) {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .shape-dots {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        @media (max-width: 850px) {
+            display: none;
+        }
+    }
+}
+
+/* =====================
+    Section 1
+=======================*/
+
+.section-one {
+    width: 100%;
+    padding: 100px 0px;
+
+    @media (max-width: 850px) {
+        padding: 60px 0px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 40px;
+
+        @media (max-width: 850px) {
+            grid-template-columns: 100%;
+            column-gap: 0px;
+            row-gap: 40px;
+            text-align: center;
+        }
+
+        .left {
+
+           h3 {
+               margin: 30px 0px;
+               color: $grey;
+
+                @media (max-width: 850px) {
+                    margin: 15px 0px;
+                }
+           }
+
+            input[type=button] {
+                width: auto;
+                height: 50px;
+                padding: 0 50px;
+                border: 0;
+                border-radius: 50px;
+                background-color: #439B9F;
+                color: #fff;
+                font-size: 18px;
+                font-weight: $regular;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            input[type=button]:hover {
+                background-color: #35797c;
+            }
+        }
+
+        .right {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+
+            @media (max-width: 992px) {
+                column-gap: 15px;
+            }
+
+            @media (max-width: 850px) {
+                display: flex;
+                justify-content: center;
+            }
+
+            .img-group {
+                position: relative;
+
+                img {
+                    max-width: 200px;
+                }
+            }
+        }
+    }
+}
+
+/* =====================
+    Section 2
+=======================*/
+
+.section-two {
+    background-color: #f3f3f3;
+    padding: 100px 0px;
+
+    @media (max-width: 850px) {
+        padding: 60px 0px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 60px;
+
+        @media (max-width: 850px) {
+            grid-template-columns: 100%;
+            column-gap: 0px;
+            row-gap: 40px;
+        }
+
+        .left {
+            display: grid;
+            grid-template-columns: 100%;
+            row-gap: 20px;
+            justify-items: center;
+
+            .img-group {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                .img-one {
+                    margin-right: 40px;
+                }
+            }
+
+            .quote {
+                text-align: center;
+                margin-top: 20px; 
+                padding: 0px 40px;
+            }
+        }
+
+        .right {
+            @media (max-width: 850px) {
+                text-align: center;
+            }
+
+            h1 {
+                font-weight: $black;
+            }
+
+            h3 {
+                margin: 30px 0px;
+                color: $grey;
+            }
+
+            .form {
+
+                input[type=button] {
+                    width: auto;
+                    height: 50px;
+                    padding: 0 30px;
+                    border: 0;
+                    border-radius: 50px;
+                    background-color: #AD451F;
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: $regular;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+
+                input[type=button]:hover {
+                    background-color: #853519;
+                }
+            }
+        }
+    }
+}
+
+
+/* =====================
+    Section 3
+=======================*/
+
+.section-three {
+    background-color: #fff;
+    padding: 100px 0px;
+
+    @media (max-width: 850px) {
+        padding: 20px 0px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 60px;
+
+        @media (max-width: 850px) {
+            grid-template-columns: 100%;
+            row-gap: 40px;
+        }
+
+        .left {
+            width: 80%;
+            text-align: center;
+
+            @media (max-width: 850px) {
+                width: 100%;
+            }
+
+            .img-group {
+                margin-top: 60px;
+            }
+
+            h2 {
+                margin-top: 40px;
+                font-size: 60px;
+                line-height: 66px;
+                font-weight: 900;
+            }
+
+            p {
+                margin-top: 30px;
+            }
+
+            input[type=button] {
+                margin-top: 30px;
+                width: auto;
+                height: 50px;
+                padding: 0 50px;
+                border: 0;
+                border-radius: 50px;
+                background-color: #439B9F;
+                color: #fff;
+                font-size: 18px;
+                font-weight: $regular;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            input[type=button]:hover {
+                background-color: #35797c;
+            }
+        }
+
+        .right {
+            display: grid;
+           
+            .content-group {
+                margin-top: 30px;
+
+                @media (max-width: 850px) {
+                    display: grid;
+                    justify-content: center;
+                    text-align: center;
+                }
+
+                img {
+                    margin-bottom: 20px;
+
+                    @media (max-width: 850px) {
+                        justify-self: center;
+                    }
+                }
+
+                h3 {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+/* =====================
+    Section 4
+=======================*/
+
+.section-four {
+    background-color: #fff;
+    padding: 60px 0px 120px 0px;
+
+    @media (max-width: 1200px) {
+        padding: 40px 0px 60px 0px;
+    }
+
+    .content-wrap {
+        border-radius: 40px;
+        background: 
+            linear-gradient(
+            rgba(0, 0, 0, 0.60), 
+            rgba(0, 0, 0, 0.60)
+            ),
+            url("/img/section-four-bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .content {
+            display: grid;
+            grid-template-columns: 100%;
+            row-gap: 30px;
+            justify-items: center;
+            padding: 160px 200px;
+
+            @media (max-width: 1200px) {
+                padding: 80px 120px;
+            }
+
+            @media (max-width: 850px) {
+                padding: 60px 60px;
+            }
+
+            h1 {
+                text-align: center;
+                color: #fff;
+
+                @media (max-width: 850px) {
+                    font-size: 34px;
+                    line-height: 40px;
+                }
+            }
+
+            .form { 
+                display: flex;
+                margin-top: 30px;
+
+                @media (max-width: 850px) {
+                    margin-top: 10px;
+                }
+
+                input[type=email] {
+                    width: 240px;
+                    height: 48px;
+                    margin: 0;
+                    border: 0;
+                    padding-left: 20px;
+                    border-radius: 5px 0px 0px 5px;
+                    outline: none;
+                    background-color: #fff;
+                    font-family: $body-font;
+                    font-size: 16px;
+                    color: #121213;
+                }
+
+                input[type=button] {
+                    position: relative;
+                    width: 100px;
+                    height: 50px;
+                    margin: 0;
+                    border: 0;
+                    border-radius: 0px 5px 5px 0px;
+                    background: url("../img/go.svg");
+                    background-size: 40px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-color: #AD451F;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+
+                input[type=button]:hover {
+                    background-color: #853519;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
